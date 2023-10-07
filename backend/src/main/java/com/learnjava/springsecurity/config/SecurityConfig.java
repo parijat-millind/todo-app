@@ -58,15 +58,10 @@ public class SecurityConfig {
             public void addCorsMappings(CorsRegistry corsRegistry){
                 corsRegistry.addMapping("/**")
                         .allowedMethods("*")
-                        .allowedOrigins("http://localhost:9895");
+                        .allowedOrigins("http://localhost:3000");
             }
         };
     }
-//
-//    @Bean
-//    public BCryptPasswordEncoder passwordEncoder() {
-//
-//        return new BCryptPasswordEncoder();
-//    }
+
 
 }
