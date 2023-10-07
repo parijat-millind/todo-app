@@ -13,15 +13,4 @@ public class ApiServiceAppApplication {
 		SpringApplication.run(ApiServiceAppApplication.class, args);
 	}
 
-
-	@Bean
-	public WebMvcConfigurer corsConfigurer(){
-		return new WebMvcConfigurer(){
-			public void addCorsMappings(CorsRegistry corsRegistry){
-				corsRegistry.addMapping("/**")
-						.allowedMethods("*")
-						.allowedOrigins("http://localhost:3000");
-			}
-		};
-	}
 }
