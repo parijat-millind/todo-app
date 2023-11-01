@@ -17,18 +17,6 @@ import java.util.stream.Stream;
 @SpringBootApplication
 public class SpringSecurityApplication {
 
-//	@Autowired
-//	private UserRepository userRepository;
-//
-//	@PostConstruct
-//	public void initUsers(){
-//		List<User> user= Stream.of(
-//				new User(101,"parijat","1203","parijat.millind@yahoo.com", "USER"),
-//				new User(102,"richa","1234","richa.sinha1203@gmail.com", "USER")
-//
-//		).collect(Collectors.toList());
-//		userRepository.saveAll(user);
-//	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringSecurityApplication.class, args);
