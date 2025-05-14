@@ -1,0 +1,10 @@
+.WelcomeComponentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* Centers items horizontally */
+  justify-content: flex-start; /* Aligns items to the top (not center) */
+  height: 100vh;
+  width: 90vw;
+  margin: 0 auto;             /* Centers the container itself horizontally */
+  padding-top: 80px;          /* Add some top padding to account for the fixed header */
+}

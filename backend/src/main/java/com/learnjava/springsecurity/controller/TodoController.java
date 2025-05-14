@@ -53,4 +53,8 @@ public class TodoController {
         return todoRepository.save(todo);
     }
 
+    @GetMapping("/test")
+    public String test(){
+        return "everything is working good";
+    }
 }

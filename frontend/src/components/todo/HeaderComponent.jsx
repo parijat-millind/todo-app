@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from './security/AuthComponent';
-
+import './css/HeaderComponent.css';
 
 export default function HeaderComponent() {
 
@@ -9,7 +9,7 @@ export default function HeaderComponent() {
     return (
 
         <header className="border-bottom border-light border-5 mb-5 p-2">
-            <div className="container">
+            <div className="headerContainer">
                 <div className="row">
                     <nav className="navbar navbar-expand-lg">
                         <a className="navbar-brand ms-2 fs-2 fw-bold text-black" href="https://github.com/parijat-millind">MyProjects</a>

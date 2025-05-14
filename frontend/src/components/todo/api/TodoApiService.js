@@ -21,7 +21,7 @@ export const createTodoApi =
     (username, todo) => apiCLient.post(`/users/${username}/todos`, todo);
 
 export const createUserApi =
-    (user) => apiCLient.post(`/users`, user);
+    (user) => apiCLient.post(`/user`, user);
 
 export const executeBasicAuth =
     (token) => apiCLient.get(`/basicAuth`, {

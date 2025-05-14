@@ -12,17 +12,17 @@ export default function AuthProvider({ children }) {
 
 
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [firstName, setFirstName] = useState(null);
     const [username, setUsername] = useState(null);
 
-
-    async function login(username, password) {
+    async function login(email, password) {
 
         try {
-            const response = await authenticateUserApi({ username, password })
+            const response = await authenticateUserApi({ email, password })
             if (response.status == "200") {
                 setIsAuthenticated(true)
-                setUsername(username)
-                const token = "Bearer " + response.data
+                setFirstName(response.data[1])
+                const token = "Bearer " + response.data[0]
                 apiCLient.interceptors.request.use((config) => {
                     config.headers.Authorization = token
                     return config
@@ -46,7 +46,7 @@ export default function AuthProvider({ children }) {
     }
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, login, logout, username }}>
+        <AuthContext.Provider value={{ isAuthenticated, login, logout, username, firstName }}>
             {children}
         </AuthContext.Provider>
     )

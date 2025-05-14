@@ -1,4 +1,4 @@
-import './TodoApp.css'
+import './css/TodoApp.css'
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
@@ -10,7 +10,6 @@ import WelcomeComponent from './WelcomeComponent';
 import LoginComponent from './LoginComponent';
 import AuthProvider, { useAuth } from './security/AuthComponent';
 import TodoComponent from './TodoComponent';
-import CreateUserComponent from './CreateUserComponent';
 
 
 function AuthenticatedRoute({ children }) {
@@ -25,13 +24,13 @@ export default function TodoApp() {
         <div className="TodoApp">
             <AuthProvider>
                 <BrowserRouter>
-                    <HeaderComponent />
+                    {/* <HeaderComponent /> */}
                     <Routes>
                         <Route path="/" element={<LoginComponent />} />
                         <Route path="/login" element={<LoginComponent />} />
-                        <Route path="/new/user" element={<CreateUserComponent />} />
-                        <Route path="/welcome/:username" element={
+                        <Route path="/welcome/:firstName" element={
                             <AuthenticatedRoute>
+                                <HeaderComponent />
                                 <WelcomeComponent />
                             </AuthenticatedRoute>
                         } />
@@ -42,6 +41,7 @@ export default function TodoApp() {
                         } />
                         <Route path="/todos" element={
                             <AuthenticatedRoute>
+                                <HeaderComponent />
                                 <TodosComponent />
                             </AuthenticatedRoute>
                         } />
